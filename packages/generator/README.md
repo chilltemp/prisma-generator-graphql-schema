@@ -15,3 +15,16 @@ Supported:
 - ❌ Json
 - ✅ String
 
+Install
+`npm i prisma-generator-graphql-schema`
+
+Usage
+```
+generator graphqlSchema {
+  provider = "prisma-generator-graphql-schema"
+  output   = "../src/schema.graphql"    // default: ./src/generated/schema.graphql
+  optionalRelationships = "true"        // default: false
+  exportedNameSuffix = "Suffix"         // default: ""
+  exportedNamePrefix = "Prefix"         // default: ""
+}
+```

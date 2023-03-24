@@ -2,6 +2,7 @@ generator custom_generator {
   provider = "node ../../packages/generator/dist/generator"
   output   = "../generated/schema.graphql"
   // exportedNamePrefix = "Test"
+  optionalRelationships = true
 }
 
 datasource db {

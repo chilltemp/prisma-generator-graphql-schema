@@ -16,11 +16,18 @@ function generateFields(config: Config, fields: DMMF.Field[]) {
   return fields
     .map((field) => {
       let type = convertType(config, field.type);
-      if (field.isList && field.isRequired) {
+      console.log(field);
+
+      let { isRequired } = field;
+      if (config.optionalRelationships && field.relationName) {
+        isRequired = false;
+      }
+
+      if (field.isList && isRequired) {
         type = `[${type}!]!`;
       } else if (field.isList) {
         type = `[${type}]`;
-      } else if (field.isRequired) {
+      } else if (isRequired) {
         type = `${type}!`;
       }
 

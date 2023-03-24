@@ -5,14 +5,14 @@ type Post {
   title: String!
   content: String
   published: Boolean!
-  author: User!
+  author: User
   authorId: Int!
 }
 
 type Profile {
   id: Int!
   bio: String
-  user: User!
+  user: User
   userId: Int!
 }
 
@@ -20,7 +20,7 @@ type User {
   id: Int!
   email: String!
   name: String
-  posts: [Post!]!
+  posts: [Post]
   profile: Profile
   notify: NotificationType!
 }

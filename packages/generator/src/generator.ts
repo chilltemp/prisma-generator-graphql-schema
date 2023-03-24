@@ -23,6 +23,9 @@ generatorHandler({
       output:
         options.generator.output?.value ||
         path.join(process.cwd(), './src/generated/schema.graphql'),
+      optionalRelationships:
+        options.generator.config.optionalRelationships?.toLowerCase() ===
+        'true',
       exportedNamePrefix: options.generator.config.exportedNamePrefix || '',
       exportedNameSuffix: options.generator.config.exportedNameSuffix || '',
     };
