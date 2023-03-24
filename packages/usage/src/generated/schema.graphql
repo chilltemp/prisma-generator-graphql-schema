@@ -1,0 +1,11 @@
+type User {
+  id: Int!
+  email: String!
+  name: String
+  notification: NotificationType!
+}type User {
+  id: Int!
+  email: String!
+  name: String
+  notification: NotificationType!
+}
