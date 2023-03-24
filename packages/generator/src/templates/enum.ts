@@ -9,7 +9,7 @@ export function generateEnum(
 ): string {
   const values = enumInfo.values.map((e) => `  ${e.name}`).join(EOL);
 
-  return `type ${generateName(config, enumInfo.name)} {
+  return `enum ${generateName(config, enumInfo.name)} {
 ${values}
 }
 
