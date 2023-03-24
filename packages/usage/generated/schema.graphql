@@ -1,7 +1,7 @@
 type Post {
   id: Int!
-  createdAt: String!
-  updatedAt: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
   title: String!
   content: String
   published: Boolean!
@@ -20,12 +20,13 @@ type User {
   id: Int!
   email: String!
   name: String
-  posts: [Post]
+  posts: [Post!]
   profile: Profile
   notify: NotificationType!
+  createdAt: DateTime!
 }
 
-type NotificationType {
+enum NotificationType {
   newPosts
   newComments
   newFollowers

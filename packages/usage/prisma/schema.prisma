@@ -3,7 +3,8 @@ generator custom_generator {
   output   = "../generated/schema.graphql"
   // exportedNamePrefix = "Test"
   optionalRelationships = true
-}
+  typeMap = "../usage/prisma/graphql-types.json"
+} 
 
 datasource db {
   provider = "postgresql"
@@ -35,6 +36,7 @@ model User {
   posts   Post[]
   profile Profile?
   notify  NotificationType
+  createdAt DateTime
 }
 
 enum NotificationType {
