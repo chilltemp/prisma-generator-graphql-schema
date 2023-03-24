@@ -16,7 +16,7 @@ function generateFields(config: Config, fields: DMMF.Field[]) {
   return fields
     .map((field) => {
       let type = convertType(config, field.type);
-      console.log(field);
+      // console.log(field);
 
       let { isRequired } = field;
       if (config.optionalRelationships && field.relationName) {
@@ -26,7 +26,7 @@ function generateFields(config: Config, fields: DMMF.Field[]) {
       if (field.isList && isRequired) {
         type = `[${type}!]!`;
       } else if (field.isList) {
-        type = `[${type}]`;
+        type = `[${type}!]`;
       } else if (isRequired) {
         type = `${type}!`;
       }
